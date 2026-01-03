@@ -1,14 +1,30 @@
-# The-sweet-corner
-Using html and css, java script
-<?php include "config.php"; ?>
+# Index-sweet-corner 
+<?php
+include "config.php";
+
+if(isset($_POST['send'])){
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+
+    $sql = "INSERT INTO contacts(name,email,message) 
+            VALUES('$name','$email','$message')";
+    if(mysqli_query($conn,$sql)){
+        echo "<script>alert('Message sent successfully!');</script>";
+    }else{
+        echo "Error: ".mysqli_error($conn);
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sweet</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<link rel="stylesheet" href="style.css">
+
 <body>
      <header>
     <nav class="navbar">
@@ -39,6 +55,7 @@ Using html and css, java script
             <a href="contactus.php"class="nav-link">contact us
 </a>
 
+        </li>
     
 
          </ul>   
@@ -46,79 +63,55 @@ Using html and css, java script
  
 
     </nav>
-   </header> 
+   </header>
 
 
 
-    <!--PREMIERE PARTIE-->
-    <h3 class="TEXT1">Welcome to our rental shop, where quality service and customer satisfaction come first.</h3>
-    <h2 class="TEXT2">About Us:</h2>
 
-   <!--Services Container-->
-   <div class="about-us">
-    <div class="btns">
-        <button id="btn_diva">1</button>
-        <button id="btn_divb">2</button>
-        <button id="btn_divc">3</button>
+<section class="contact-container">
+
+    <!-- Contact Information -->
+   
+    <div class="contact-info">
+        <h2>Contact Information</h2>
+        <p><strong>📍 Address:</strong> Rue 21 xxx, Skikda</p>
+        <p><strong>📞 Phone:</strong> 05 xx xx xx xx</p>
+        <p><strong>📧 Email:</strong> thesweetcorner21@email.com</p>
+
+        <h3>🕒 Working Hours</h3>
+        <ul>
+            <li>Saturday – Thursday: <span>08:00 AM – 10:00 PM</span></li>
+            <li>Friday: <span>02:00 PM – 10:00 PM</span></li>
+        </ul>
     </div>
 
-    <div class="blocks">
-  <!-- 1 -->
-    <div class="diva" id="diva">
-         <div class="about-info">
-            <div class="about-info-text">
-                <h2>M.karim</h2>
-            <p>He is a business owner who manages a rental shop and runs his own business. He provides reliable services and focuses on customer satisfaction. With experience in the field, he is committed to professionalism and quality.</p>
-            
-            </div>
-            
-            
-             <img class="about-image" src="images/photo_2025-12-25_17-37-20.jpg" alt="">
-        </div>     
+    <!-- Contact Form -->
+    <!-- Form -->
+<form action="" method="POST" class="contact-form">
+<label><b>Name:</b></label>
+<input type="text" name="name" required><br><br>
+<label><b>Email:</b></label>
+<input type="email" name="email" required><br><br>
+<label><b>Message:</b></label>
+<textarea name="message" required></textarea><br><br>
+<button type="submit" name="send">Send</button>
+</form>
+
+</section>
+
+<!-- Map Section -->
+<section class="map-section">
+    <h2>📍 Find Us</h2>
+    <div class="map-container">
+       <iframe
+  src="https://www.google.com/maps?q=Skikda,+Algeria&output=embed"
+  loading="lazy"
+  allowfullscreen>
+</iframe>
     </div>
+</section>
 
-
-    <!-- 2 -->
-    <div class="divb" id="divb">
-        <div class="about-info">
-            <div class="about-info-text">
-                <h2>About Us</h2>
-            <p>Our shop started as a small rental business built on trust and dedication. Over time, we grew by focusing on quality service and customer satisfaction. Today, we continue to provide reliable and professional rental solutions.</p>
-            
-            
-            </div>
-            
-            
-             <img class="about-image" src="images/photo_2025-12-25_16-53-24.jpg" alt="">
-        </div> 
-    </div>
-
-    <!-- 3 -->
-    <div class="divc" id="divc">
-        <div class="about-info">
-            <div class="about-info-text">
-                <h2>Our Team</h2>
-            <p>Our team is made up of dedicated and experienced professionals who work together to deliver reliable and high-quality rental services. We believe in teamwork, professionalism, and customer satisfaction.</p>
-            
-            
-            </div>
-            
-            
-             <img class="about-image" src="images/photo_2025-12-25_16-54-31.jpg" alt="">
-        </div>
-          
-    </div>
-    </div>
-   </div>
-
-
-
-
-
-
-
-
-   <footer class="footer">
+<footer class="footer">
   <div class="footer-box">
     <h3>The Sweet Corner</h3>
     <ul>
@@ -148,6 +141,7 @@ Using html and css, java script
 </footer>
  <div class="footer-bottom">
     <p><b>© 2026 My Shop. The Sweet Corner.</b></p> </div>
-     <script type="text/javascript" src="script.js"></script>
+
+    
 </body>
 </html>
