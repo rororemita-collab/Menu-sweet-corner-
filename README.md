@@ -145,3 +145,194 @@ if(isset($_POST['send'])){
     
 </body>
 </html>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+.playfair-display {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+ 
+  font-style: normal;
+}
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family:  "Playfair Display", serif;
+}
+
+body{
+
+    margin-top: 80px;
+    background-color: rgb(116, 39, 39) ;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+button{
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+img{
+    width: 100%;
+
+}
+.section-content{
+    margin:  0 auto;
+    padding: 0 20px;
+  
+}
+
+    header {
+        background-color:  rgb(116, 39, 39);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+ 
+z-index: 1000;
+}
+
+
+header .navbar{
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content:space-between ;
+}
+.navbar .nav-logo .logo-text{
+    color: black;
+   
+  font-size: 28px;  
+  font-style: oblique; 
+  
+
+
+}
+.navbar .nav-menu{;
+   
+    display:flex;
+    gap: 10px;
+}
+
+.navbar .nav-menu .nav-link{
+   padding: 5px 40px;
+  color: rgb(12, 12, 12);
+  background-color: hsl(340, 100%, 99%);
+  border-radius: 20px;
+  transition: 0.3s ease;
+
+}
+
+
+
+
+
+
+.navbar .nav-menu .buy-btn:hover{
+   color: rgb(6, 6, 6);
+    background-color:rgb(176, 165, 166);
+}
+main{
+        background-image: url(images/photo_2025-12-27_12-26-45.jpg);
+
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+ height: 550px;
+}
+.hero-section .hero-details .title{
+       color: black;
+   
+  font-size: 25px;   
+  font-style: italic; 
+  
+
+}
+.hero-section .hero-details .subtitle{
+          color: rgb(60, 0, 0);
+   
+  font-size: 25px;   
+  font-style: italic;
+
+}
+.hero-section .hero-details .descrption{
+     color: black;
+     
+  font-style: oblique;
+  font-size: 20px;
+  line-height: 1.8;
+ 
+  letter-spacing: 0.5px;
+
+
+}
+.hero-section .hero-details .button{
+    
+  margin-right: 30px;
+  padding:2px 40px;
+ border:  2px solid white;
+   background:  rgb(116, 39, 39);
+  color: black;
+  text-decoration: none;
+  border-radius: 15px;
+  transition: 0.3s ease;
+}
+.hero-section .hero-details .button:hover{
+      background-color:rgb(176, 165, 166);
+}
+.hero-section .hero-details .contactus{ 
+    background: transparent;
+  margin-right: 30px;
+  padding:2px 40px;
+  border-radius: 15px;
+  border:  2px solid white;
+  color:white;
+  text-decoration: none;
+
+}
+.hero-section .hero-details .contactus:hover{
+      background-color:rgb(176, 165, 166);
+}
+.footer {
+  background-color:   rgb(116, 39, 39);
+  color: #fff;
+  display: flex;
+  justify-content: space-around; /* يفرّقهم */
+  align-items: flex-start;
+  padding: 60px 80px;
+  gap: 60px; /* مسافة بين البوكسات */
+}
+
+.footer-box {
+  width: 25%;
+}
+
+.footer-box h3 {
+  margin-bottom: 20px;
+  color: black;
+}
+
+.footer-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-box ul li {
+  margin-bottom: 10px;
+}
+
+.footer-box p {
+  margin-bottom: 10px;
+}
+.footer-bottom{
+  text-align: center;
+  margin-top: 10px;
+  font-size: 20px;
+  color:black;
+}
